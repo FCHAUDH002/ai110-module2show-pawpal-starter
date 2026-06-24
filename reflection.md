@@ -5,6 +5,9 @@
 **a. Initial design**
 
 - Briefly describe your initial UML design.
+
+For my initial design, I identified three core actions a user should be able to perform. First, a user should be able to add a pet by entering its name and species. Second, a  user should be able to schedule a care task like a walk or feeding for a specific pet at a specific time. Third, a user should be able to generate and view a daily schedule of all their pet's tasks.
+
 - What classes did you include, and what responsibilities did you assign to each?
 
 **b. Design changes**
