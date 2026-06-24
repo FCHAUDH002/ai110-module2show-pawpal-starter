@@ -10,10 +10,14 @@ For my initial design, I identified three core actions a user should be able to 
 
 - What classes did you include, and what responsibilities did you assign to each?
 
+For my class design, I chose four classes of task, pet, owner, and scheduler. The Task class represents a single care activity and holds information like the description, time, duration, priority, frequency, and whether it has been completed. The Pet class represents one animal and holds its name, species, and a list of tasks. The Owner class represents the person using the app and manages a list of pets. The Scheduler class is the brain of the system and is responsible for sorting tasks by time, filtering tasks, detecting conflicts, and handling recurring tasks.
+
 **b. Design changes**
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
+
+My design did not change significantly after AI review. The main feedback was that the Scheduler should retrieve all tasks through the Owner's get_all_tasks() method rather than accessing each pet's tasks directly.
 
 ---
 
