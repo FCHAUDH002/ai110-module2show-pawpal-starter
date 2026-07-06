@@ -26,12 +26,23 @@ My design did not change significantly after AI review. The main feedback was th
 **a. Constraints and priorities**
 
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
+
+My scheduler considers time as the main constraint, sorting all tasks chronologically so the owner can follow a clear daily plan. It also considers completion status and pet name as filters so the owner can focus on what still needs to be done.
+
 - How did you decide which constraints mattered most?
+
+I decided these constraints mattered most because a pet owner primarily needs to know what to do and when to do it. Time and completion status are the most practical pieces of information for planning a daily routine.
 
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
+
+One tradeoff my scheduler makes is that it only checks for exact start times when detecting conflicts. For example, if a task starts at 08:00 and lasts 60 minutes, and another task starts at 08:30, the scheduler would not flag that as a conflict.
+
 - Why is that tradeoff reasonable for this scenario?
+
+This is reasonable because the app is meant to be simple, and the owner can decide for themselves whether two overlapping tasks are actually a problem and take action accordingly. Implementing duration-based overlap detection would require converting time strings to datetime objects and comparing ranges, which adds complexity. 
+
 
 ---
 

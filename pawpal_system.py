@@ -14,8 +14,14 @@ class Task:
     due_date: Optional[date] = None
 
     def mark_complete(self):
-        """Mark this task as complete."""
+        """Mark this task as complete and update due date for recurring tasks."""
         self.completed = True
+        if self.frequency == "daily":
+            self.due_date = date.today() + timedelta(days=1)
+            self.completed = False
+        elif self.frequency == "weekly":
+            self.due_date = date.today() + timedelta(weeks=1)
+            self.completed = False
 
 @dataclass
 class Pet:
