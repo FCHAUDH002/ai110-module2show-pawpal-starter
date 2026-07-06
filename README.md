@@ -95,10 +95,45 @@ Confidence Level: 5/5 stars. All 5 tests pass and cover the core scheduling beha
 
 Describe your app in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. Open the app by running `streamlit run app.py` in the terminal.
+2. Enter an owner name and pet name in the Quick Demo Inputs section.
+3. Select the species from the dropdown menu.
+4. Add a few tasks by entering a task title, duration, and priority then clicking "Add task".
+5. Click "Generate schedule" to see all tasks sorted by time in a table.
+6. If two tasks are scheduled at the same time, a conflict warning will appear.
+7. If no conflicts are found, a success message will appear.
+
+Key Scheduler behaviors:
+- Tasks are always displayed in chronological order using `Scheduler.sort_by_time()`
+- Conflicts are detected when two tasks share the same start time using `Scheduler.detect_conflicts()`
+- Daily and weekly tasks automatically update their due date when marked complete
+
+Sample CLI output from running `main.py`:
+
+=== Today's Schedule (Sorted by Time) ===
+[✗] 07:00 — Feeding (10 min) [high]
+[✗] 08:00 — Morning walk (30 min) [high]
+[✗] 08:00 — Medication (5 min) [high]
+[✗] 15:00 — Playtime (20 min) [medium]
+[✗] 18:00 — Evening walk (30 min) [high]
+
+=== Biscuit's Tasks Only ===
+  18:00 — Evening walk
+  08:00 — Morning walk
+  07:00 — Feeding
+
+=== Incomplete Tasks Only ===
+  18:00 — Evening walk
+  08:00 — Morning walk
+  07:00 — Feeding
+  08:00 — Medication
+  15:00 — Playtime
+
+=== Conflict Check ===
+⚠️  Conflict at 08:00: 'Morning walk' and 'Medication'
+
+=== Recurring Task Test ===
+Before: Feeding — completed: False, due: 2026-07-05
+After: Feeding — completed: False, due: 2026-07-06
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
