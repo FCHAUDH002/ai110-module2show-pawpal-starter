@@ -56,6 +56,8 @@ No conflicts found.
 
 ## 🧪 Testing PawPal+
 
+My tests cover task completion, task addition, sorting correctness, recurrence logic, and conflict detection.
+
 ```bash
 # Run the full test suite:
 pytest
@@ -67,8 +69,18 @@ pytest --cov
 Sample test output:
 
 ```
-# Paste your pytest output here
+================================================================================================ test session starts ================================================================================================
+platform darwin -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0
+rootdir: /Users/fatimachaudhry/Downloads/Codepath/ai110-module2show-pawpal-starter
+plugins: anyio-4.13.0
+collected 5 items                                                                                                                                                                                                   
+
+tests/test_pawpal.py .....                                                                                                                                                                                    [100%]
+
+================================================================================================= 5 passed in 0.03s =================================================================================================
 ```
+
+Confidence Level: 5/5 stars. All 5 tests pass and cover the core scheduling behaviors.
 
 ## 📐 Smarter Scheduling
 
